@@ -33,11 +33,6 @@ public class Message {
         player.sendMessage(generate(plugin, message));
     }
 
-    public static void sendConsole(JavaPlugin plugin, String message) {
-        /* コンソールにメッセージを送信する */
-        plugin.getLogger().info(message);
-    }
-
     public static void sendCommandSender(CommandSender sender, JavaPlugin plugin, String message) {
         /* コマンド送信者にメッセージを送信する */
         sender.sendMessage(generate(plugin, message));

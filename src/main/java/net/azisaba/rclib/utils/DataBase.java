@@ -28,10 +28,8 @@ public class DataBase {
             con = DriverManager.getConnection(this.URL, this.USER, this.PASS);
             stmt = con.createStatement();
             stmt.executeUpdate(sql);
-            Message.sendConsole(RcLib.getPlugin(), sql + " operation successfully.");
         } catch (Exception e) {
             // sql文の処理に失敗したなら
-            Message.sendConsole(RcLib.getPlugin(), sql + " operation failed.");
         }
     }
 
@@ -42,10 +40,8 @@ public class DataBase {
             con = DriverManager.getConnection(this.URL, this.USER, this.PASS);
             stmt = con.createStatement();
             rs = stmt.executeQuery(sql);
-            Message.sendConsole(RcLib.getPlugin(), sql + " operation successfully.");
         }catch (Exception e) {
             // sql文の処理に失敗したなら
-            Message.sendConsole(RcLib.getPlugin(), sql + " operation failed.");
         }
         return rs;
     }
@@ -56,10 +52,8 @@ public class DataBase {
             // sql文の処理を試みる
             con = DriverManager.getConnection(this.URL, this.USER, this.PASS);
             ps = con.prepareStatement(sql);
-            Message.sendConsole(RcLib.getPlugin(), sql + " operation successfully.");
         }catch (Exception e) {
             // sql文の処理に失敗したなら
-            Message.sendConsole(RcLib.getPlugin(), sql + " operation failed.");
         }
         return ps;
     }
