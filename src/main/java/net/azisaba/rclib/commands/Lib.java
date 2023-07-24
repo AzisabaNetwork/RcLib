@@ -1,7 +1,9 @@
 package net.azisaba.rclib.commands;
 
 import net.azisaba.rclib.RcLib;
+import net.azisaba.rclib.entitys.User;
 import net.azisaba.rclib.utils.Message;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,6 +23,8 @@ public class Lib implements CommandExecutor {
         String pluginVersion = RcLib.getPlugin().getDescription().getVersion();
         String apiVersion = RcLib.getPlugin().getDescription().getAPIVersion();
         Message.sendCommandSender(sender ,RcLib.getPlugin(), "plugin:" + pluginVersion + ", spigot:" + apiVersion);
+        User user = new User("d7e5b662-531d-487d-bb30-0c829140e639");
+        Bukkit.broadcastMessage(user.getMoney() + "");
         return true;
     }
 }

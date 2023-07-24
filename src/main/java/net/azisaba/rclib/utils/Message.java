@@ -12,7 +12,7 @@ public class Message {
     public static String generate(JavaPlugin plugin, String message) {
         /* メッセージを生成する: plugin, message */
         String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        ChatColor[] colors = {ChatColor.DARK_BLUE, ChatColor.DARK_GREEN, ChatColor.DARK_RED, ChatColor.DARK_PURPLE, ChatColor.GOLD, ChatColor.BLUE, ChatColor.GREEN, ChatColor.RED, ChatColor.LIGHT_PURPLE, ChatColor.YELLOW, ChatColor.GOLD};
+        ChatColor[] colors = {ChatColor.RED, ChatColor.BLUE, ChatColor.YELLOW, ChatColor.GREEN, ChatColor.AQUA, ChatColor.GOLD, ChatColor.DARK_RED, ChatColor.DARK_BLUE, ChatColor.DARK_GREEN, ChatColor.DARK_AQUA};
         String pluginName = plugin.getName();
         return colors[alphabet.indexOf(pluginName.charAt(0)) % colors.length].toString() + ChatColor.BOLD + pluginName + ChatColor.RESET + ChatColor.GRAY + ": " + ChatColor.RESET + ChatColor.WHITE + message;
     }

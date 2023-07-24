@@ -1,7 +1,5 @@
 package net.azisaba.rclib.utils;
 
-import net.azisaba.rclib.RcLib;
-
 import java.sql.*;
 
 public class DataBase {
