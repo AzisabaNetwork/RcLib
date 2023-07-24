@@ -20,7 +20,7 @@
     <dependency>
         <groupId>net.azisaba</groupId>
         <artifactId>rclib</artifactId>
-        <version>1.0.0</version>
+        <version>バージョン</version>
         <scope>system</scope>
         <systemPath>ライブラリ本体のパス</systemPath>
     </dependency>
@@ -45,7 +45,6 @@
 * `Message.generate(plugin, message);`を使用して統一された形でメッセージを生成します。String型で戻り値が与えられます。
 * `Message.send(plugin, message);`を使用してメッセージをサーバーにbroadcastします。
 * `Message.sendPlayer(player, plugin, message);`を使用して引数のプレイヤーにメッセージを送信します。
-* `Message.sendConsole(plugin, message);`を使用してコンソールにログとして送信します。
 * `Message.sendCommandSender(sender, plugin, message);`を使用してコマンド送信者にメッセージを送信します。
 * `Message.sendPermission(permission, plugin, message);`を使用して引数の権限を持っているプレイヤーに限定してメッセージを送信します。
 * `Message.sendScoreboardTag(scoreboardTag, plugin, message);`を使用して引数のスコアボードタグを持っているプレイヤーに限定してメッセージを送信します。
@@ -53,12 +52,12 @@
 (4) utils.Yaml
 
 * カスタムコンフィグの実装を簡略化します。
-* `Yaml yaml = new Yaml(yamlId);`を使用してインスタンスを作成します。yamlIdには、サーバーのpluginsフォルダからの相対パスを指定します。
+* `Yaml yaml = new Yaml(yamlId);`を使用してインスタンスを作成します。yamlIdには、拡張子を除いたファイル名、pluginにはJavaPluginオブジェクトを指定します。
 * `yaml.get();`を使用してYamlConfigurationオブジェクトを生成し、戻り値として与えられます。
 * `yaml.set(yamlConfig)`を使用してファイルをyamConfigurationで上書きします。
 * yamlConfigurationは、取得時の状態のまま更新された値を参照しない為、以下のように使用します。
     ```Java
-    Yaml yaml = new Yaml(Hello/world.yml);
+    Yaml yaml = new Yaml("config.yml", Example.getPlugin());
     // 値を取得する
     String str = yaml.get().getString("owner");
     // 値を設定する
