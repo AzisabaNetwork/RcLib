@@ -22,20 +22,20 @@
         <artifactId>rclib</artifactId>
         <version>バージョン</version>
         <scope>system</scope>
-        <systemPath>ライブラリ本体のパス</systemPath>
+        <systemPath>ライブラリ本体のパス(※「/」ではなく「\」区切り)</systemPath>
     </dependency>
     ```
 3. Mavenを再読み込みしてください。
 
-(2) utils.DataBase
+(2) entitys.User
 
-* データベースの操作を簡略化します。
-* DBサーバーとの接続はメソッド呼び出し毎に実行され、close()を使用するまで維持されます。
-* `DataBase db = new DataBase(URL, USER, PASS);`を使用してインスタンスを作成します。
-* `db.executeUpdate(sql);`を使用してexecuteUpdateでSQL文を実行します。
-* `db.executeQuery(sql);`を使用してexecuteQueryでSQL文を実行します。戻り値にResuleSetが与えられます。
-* `db.preparedStatement(sql);`を使用してpreparedStatementでSQL文を実行します。戻り値にPreparedStatementが与えられます。
-* `db.close();`を使用してリソースを解放します。必要な処理を行った後には必ず実行するようにしてください。
+* プレイヤーに紐付けされたオブジェクト(User)の持つデータを操作します。
+* `User user = new User(userId);`を使用してインスタンスを作成します。userIdにはuuidを指定します。
+* `user.getUserId();`を使用してuserIdを取得します。
+* `user.getName();`を使用してnameを取得します。
+* `user.setName(name)`を使用してnameを設定します。
+* `user.getMoney();`を使用してmoneyを取得します。
+* `user.setMoney(money)`を使用してmoneyを設定します。
 
 (3) utils.Chat
 
@@ -46,8 +46,23 @@
 * `Chat.f(プラグイン, メッセージ);`でメッセージをフォーマットします。
 * `chat.h(プラグイン)`でヘッダを作成します。TextComponentを使用する場合は、`Chat.h(プラグイン) + tc`といった使用を想定しています。
 
+(4) utils.CraftPlayer
 
-(4) utils.Yaml
+* プレイヤーに関する処理を補助します。
+* `CraftPlayer.isOnline();`を使用してプレイヤーがオンラインかを判定します。
+* `CraftPlayer.getHead();`を使用してHeadを取得します。(※1.3.0でutils.Headから移動)
+
+(5) utils.DataBase
+
+* データベースの操作を簡略化します。
+* DBサーバーとの接続はメソッド呼び出し毎に実行され、close()を使用するまで維持されます。
+* `DataBase db = new DataBase(URL, USER, PASS);`を使用してインスタンスを作成します。
+* `db.executeUpdate(sql);`を使用してexecuteUpdateでSQL文を実行します。
+* `db.executeQuery(sql);`を使用してexecuteQueryでSQL文を実行します。戻り値にResuleSetが与えられます。
+* `db.preparedStatement(sql);`を使用してpreparedStatementでSQL文を実行します。戻り値にPreparedStatementが与えられます。
+* `db.close();`を使用してリソースを解放します。必要な処理を行った後には必ず実行するようにしてください。
+
+(6) utils.Yaml
 
 * カスタムコンフィグの実装を簡略化します。
 * `Yaml yaml = new Yaml(yamlId);`を使用してインスタンスを作成します。yamlIdには、拡張子を除いたファイル名、pluginにはJavaPluginオブジェクトを指定します。
@@ -64,15 +79,6 @@
     yaml.set(yamlConfig);
     ```
 
-(5) entitys.user
-
-* プレイヤーに紐付けされたオブジェクト(User)の持つデータを操作します。
-* `User user = new User(userId);`を使用してインスタンスを作成します。userIdにはuuidを指定します。
-* `user.getUserId();`を使用してuserIdを取得します。
-* `user.getName();`を使用してnameを取得します。
-* `user.setName(name)`を使用してnameを設定します。
-* `user.getMoney();`を使用してmoneyを取得します。
-* `user.setMoney(money)`を使用してmoneyを設定します。
 
 ## ライセンス
 
