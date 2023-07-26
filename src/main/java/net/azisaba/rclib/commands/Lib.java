@@ -19,7 +19,7 @@ public class Lib implements CommandExecutor {
             return true;
         }
         String pluginVersion = RcLib.getPlugin().getDescription().getVersion();
-        sender.sendMessage(Chat.f(RcLib.getPlugin(), "このRcLibはver" + pluginVersion + "です。"));
+        sender.sendMessage(Chat.f(RcLib.getPlugin(), "バージョン " + pluginVersion + "のRcLibが動作しています。"));
         return true;
     }
 }
