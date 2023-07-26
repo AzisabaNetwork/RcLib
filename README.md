@@ -25,7 +25,11 @@
         <systemPath>ライブラリ本体のパス(※「/」ではなく「\」区切り)</systemPath>
     </dependency>
     ```
-3. Mavenを再読み込みしてください。
+3. plugin.ymlに以下の記述を追加してください。
+    ```Yaml
+    depend: [RcLib]
+    ```
+4. Mavenを再読み込みしてください。
 
 (2) entitys.User
 

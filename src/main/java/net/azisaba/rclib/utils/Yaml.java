@@ -11,9 +11,9 @@ public class Yaml {
     private final String yamlId;
     private final JavaPlugin plugin;
 
-    public Yaml(String yamlName, JavaPlugin plugin) {
+    public Yaml(String yamlId, JavaPlugin plugin) {
         /* インスタンス処理 */
-        this.yamlId = yamlName;
+        this.yamlId = yamlId;
         this.plugin = plugin;
     }
 
