@@ -37,17 +37,15 @@
 * `db.preparedStatement(sql);`を使用してpreparedStatementでSQL文を実行します。戻り値にPreparedStatementが与えられます。
 * `db.close();`を使用してリソースを解放します。必要な処理を行った後には必ず実行するようにしてください。
 
-(3) utils.Message
+(3) utils.Chat
 
 * メッセージの装飾の統一を簡単にし、「痒い所に手が届く送信方法」を利用できます。
 * Example>>だったりExample:だったり、形式を統一して視認性を向上させます。
+* 1.1.3以前のバージョンではutils.Messageが同等の機能を提供します。
 * `プラグイン名: メッセージ`で統一されます。プラグイン名の色は、一文字のアルファベットによって自動的に決定されます。
-* `Message.generate(plugin, message);`を使用して統一された形でメッセージを生成します。String型で戻り値が与えられます。
-* `Message.send(plugin, message);`を使用してメッセージをサーバーにbroadcastします。
-* `Message.sendPlayer(player, plugin, message);`を使用して引数のプレイヤーにメッセージを送信します。
-* `Message.sendCommandSender(sender, plugin, message);`を使用してコマンド送信者にメッセージを送信します。
-* `Message.sendPermission(permission, plugin, message);`を使用して引数の権限を持っているプレイヤーに限定してメッセージを送信します。
-* `Message.sendScoreboardTag(scoreboardTag, plugin, message);`を使用して引数のスコアボードタグを持っているプレイヤーに限定してメッセージを送信します。
+* `Chat.f(プラグイン, メッセージ);`でメッセージをフォーマットします。
+* `chat.h(プラグイン)`でヘッダを作成します。TextComponentを使用する場合は、`Chat.h(プラグイン) + tc`といった使用を想定しています。
+
 
 (4) utils.Yaml
 

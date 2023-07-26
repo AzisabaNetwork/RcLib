@@ -4,5 +4,5 @@ main: net.azisaba.rclib.RcLib
 api-version: '1.17'
 commands:
   lib:
-    description: RcLib plugin command.
+    description: RcLibのプラグインコマンドです。
     usage: /lib
