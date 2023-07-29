@@ -35,6 +35,39 @@ public class CraftPlayer {
         return online;
     }
 
+    public static boolean hasScoreboardTag(Player player, String scoreboardTag) {
+        /* scoreboardTagを持つかを判定する: player */
+        for (String tag : player.getScoreboardTags()) {
+            if (tag.equals(scoreboardTag)) {
+                // 一致するなら
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean hasScoreboardTag(String name, String scoreboardTag) {
+        /* scoreboardTagを持つかを判定する: name */
+        for (String tag : Bukkit.getServer().getPlayer(name).getScoreboardTags()) {
+            if (tag.equals(scoreboardTag)) {
+                // 一致するなら
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean hasScoreboardTag(UUID uuid, String scoreboardTag) {
+        /* scoreboardTagを持つかを判定する: name */
+        for (String tag : Bukkit.getServer().getPlayer(uuid).getScoreboardTags()) {
+            if (tag.equals(scoreboardTag)) {
+                // 一致するなら
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static ItemStack getHead(Player player) {
         /* Headを取得する: player */
         ItemStack item = new ItemStack(Material.PLAYER_HEAD);

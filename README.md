@@ -66,7 +66,13 @@
 * `db.preparedStatement(sql);`を使用してpreparedStatementでSQL文を実行します。戻り値にPreparedStatementが与えられます。
 * `db.close();`を使用してリソースを解放します。必要な処理を行った後には必ず実行するようにしてください。
 
-(6) utils.Yaml
+(6) utils.Log
+
+* ログファイルの実装を簡略化します。
+* `Log log = new Log("fileName");`を使用してインスタンスを作成します。
+* `log.write("...");`を使用してログを書き込みます。時刻は自動で記述されます。
+
+(7) utils.Yaml
 
 * カスタムコンフィグの実装を簡略化します。
 * `Yaml yaml = new Yaml(yamlId);`を使用してインスタンスを作成します。yamlIdには、拡張子を除いたファイル名、pluginにはJavaPluginオブジェクトを指定します。

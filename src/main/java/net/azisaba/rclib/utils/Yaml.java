@@ -12,7 +12,7 @@ public class Yaml {
     private final JavaPlugin plugin;
 
     public Yaml(String yamlId, JavaPlugin plugin) {
-        /* インスタンス処理 */
+        /* コンストラクタ */
         this.yamlId = yamlId;
         this.plugin = plugin;
     }
