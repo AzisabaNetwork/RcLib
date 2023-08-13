@@ -1,0 +1,8 @@
+name: RcLib
+version: '${project.version}'
+main: net.azisaba.rclib.RcLib
+api-version: '1.17'
+commands:
+  rcl:
+    description: RcLibのプラグインコマンドです。
+    usage: /rcl
